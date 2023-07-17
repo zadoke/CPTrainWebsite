@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles/index.css';
-import './styles/transitions.css';
 import Homepage from './components/homepage';
 import Schedule from './components/schedule';
 
