@@ -11,7 +11,7 @@ interface HeaderProps {
 
 function Header({type, stationName, trainNumber}: HeaderProps) {
     return (
-        <nav className='bg-white font-inter pt-4 pb-4 fixed right-0 left-0 mr-4 z-50'>
+        <nav className='backdrop-blur-sm bg-white/70 rounded font-inter pt-3 pb-3 fixed right-0 left-0 mr-4 z-50'>
             <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
                 <div></div>
                 {type === 'station' && stationName && (
@@ -23,7 +23,7 @@ function Header({type, stationName, trainNumber}: HeaderProps) {
                         </Link>
                         <h3 className='text-2xl font-bold ml-4'>
                             {stationName}
-                            <sup>horários</sup>
+                            <sub className='px-0.5'>horários</sub>
                         </h3>
                     </div>
                 )}
