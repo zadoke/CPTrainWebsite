@@ -12,7 +12,7 @@ function Footer() {
                     <br />© Infraestruturas de Portugal, S.A.
                 </div>
                 <a
-                    href='https://github.com/zadoke'
+                    href='https://github.com/zadoke/CPTrainWebsite'
                     target='_blank'
                     rel='noopener noreferrer'
                     className='text-4x1 md:text-4xl mr-2'
