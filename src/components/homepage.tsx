@@ -53,7 +53,7 @@ const Homepage = () => {
     return (
         <div className='flex flex-col min-h-screen'>
             <div className='flex-grow'>
-                <Header />
+                <Header type='none' />
                 <div className='flex items-center justify-center bg-white min-h-screen'>
                     <div className='flex flex-col items-center'>
                         <h1 className='text-4xl font-semibold mb-4 transition-all duration-500 ease-in-out transform'>

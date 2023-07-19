@@ -3,31 +3,43 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faTrain } from '@fortawesome/free-solid-svg-icons';
 
-interface Train {
-    carriages: number;
-    date: string;
-    destinationStationId: number;
-    destinationStationName: string;
-    info: string;
-    operator: string;
-    originStationId: number;
-    originStationName: string;
-    serviceType: string;
-    time: string;
-    trainNumber: number;
-    trainPassed: boolean;
-}
-interface ScheduleData {
-    stationId: number;
-    stationName: string;
-    trains: Train[];
+interface HeaderProps {
+    type: 'station' | 'train' | 'none';
+    stationName?: string;
+    trainNumber?: number;
 }
 
-function Header() {
+function Header({type, stationName, trainNumber}: HeaderProps) {
     return (
         <nav className='bg-white font-inter pt-4 pb-4 fixed right-0 left-0 mr-4 z-50'>
             <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
                 <div></div>
+                {type === 'station' && stationName && (
+                    <div className='font-inter fixed ml-5 my-5 flex items-center z-50'>
+                        <Link to='/'>
+                            <button className='transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-120 '>
+                                <FontAwesomeIcon icon={faArrowLeft} />
+                            </button>
+                        </Link>
+                        <h3 className='text-2xl font-bold ml-4'>
+                            {stationName}
+                            <sup>horários</sup>
+                        </h3>
+                    </div>
+                )}
+                {type === 'train' && trainNumber && (
+                    <div className='font-inter fixed ml-5 my-5 flex items-center z-50'>
+                        <Link to='/'>
+                            <button className='transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-120 '>
+                                <FontAwesomeIcon icon={faArrowLeft} />
+                            </button>
+                        </Link>
+                        <h3 className='text-2xl font-bold ml-4'>
+                            {trainNumber}
+                            <sup>comboio</sup>
+                        </h3>
+                    </div>
+                )}
                 <button
                     data-collapse-toggle='navbar-default'
                     type='button'

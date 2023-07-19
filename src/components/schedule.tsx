@@ -86,19 +86,7 @@ const Schedule = () => {
             <div className='flex-grow relative'>
                 {scheduleData ? (
                     <>
-                        <Header />
-                        <div className='font-inter fixed ml-5 my-5 flex items-center'>
-                            <Link to='/'>
-                                <button className='transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-120 '>
-                                    <FontAwesomeIcon icon={faArrowLeft} />
-                                </button>
-                            </Link>
-                            <h3 className='text-2xl font-bold ml-4 '>
-                                {scheduleData.stationName}
-                                <sup>horários</sup>
-                            </h3>
-                        </div>
-
+                        <Header type='station' stationName={scheduleData.stationName} />
                         <div className='mt-16 mx-12'>
                             <div className='font-inter font-bold text-center text-lg py-6'>
                                 {getSuppressedTrainCountText(scheduleData)}
