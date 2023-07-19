@@ -13,8 +13,8 @@
     background-opacity: 80;
     backdrop-filter: blur(20px);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  }
-  
+}
+
 .font-inter {
     font-family: 'Inter';
 }
@@ -23,5 +23,4 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-  }
-  
+}
