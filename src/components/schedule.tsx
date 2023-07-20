@@ -86,7 +86,10 @@ const Schedule = () => {
             <div className='flex-grow relative'>
                 {scheduleData ? (
                     <>
-                        <Header type='station' stationName={scheduleData.stationName} />
+                        <Header
+                            type='station'
+                            stationName={scheduleData.stationName}
+                        />
                         <div className='mt-16 mx-12'>
                             <div className='font-inter font-bold text-center text-lg py-6'>
                                 {getSuppressedTrainCountText(scheduleData)}
@@ -116,58 +119,67 @@ const Schedule = () => {
                                                     className='w-8 h-8 md:w-10 md:h-10 rounded-lg shadow-xl border-xl border-green-400 bg-opacity-30  dark:shadow-gray-400 mr-4'
                                                     alt='logo'
                                                 />
-                                                <div>
-                                                    <div className='flex items-center'>
-                                                        <span className='relative flex h-3 w-3 mr-2'>
-                                                            <span
-                                                                className={`animate-ping absolute inline-flex h-full w-full rounded-full ${pingClassName} opacity-75`}
-                                                            ></span>
-                                                            <span
-                                                                className={`relative inline-flex rounded-full h-3 w-3 ${dotClassName}`}
-                                                            ></span>
-                                                        </span>
+                                                <div className='grid grid-cols-2 flex-1 md:mr-8'>
+                                                    <section>
+                                                        <div className='flex items-center'>
+                                                            <span className='relative flex h-3 w-3 mr-2'>
+                                                                <span
+                                                                    className={`animate-ping absolute inline-flex h-full w-full rounded-full ${pingClassName} opacity-75`}
+                                                                ></span>
+                                                                <span
+                                                                    className={`relative inline-flex rounded-full h-3 w-3 ${dotClassName}`}
+                                                                ></span>
+                                                            </span>
+                                                            <div
+                                                                className={`font-inter text-lg font-medium ${textClassName}`}
+                                                            >
+                                                                {train.time}{' '}
+                                                            </div>
+                                                        </div>
+
                                                         <div
                                                             className={`font-inter text-lg font-medium ${textClassName}`}
                                                         >
-                                                            {train.time}{' '}
-                                                        </div>
-
-                                                        <div
-                                                            className={`ml-2 font-inter text-lg font-medium ${textClassName}`}
-                                                        >
                                                             {train.info}
                                                         </div>
-                                                    </div>
-                                                    <div className='flex justify-start items-center w-full'>
-                                                        <div className='font-inter text-sm text-gray-800'>
-                                                            {
-                                                                train.originStationName
-                                                            }{' '}
-                                                            →{' '}
-                                                            {
-                                                                train.destinationStationName
-                                                            }
-                                                        </div>
-                                                        <div className='font-inter text-sm text-gray-600 justify-end ml-2 '>
-                                                            <FontAwesomeIcon
-                                                                icon={faTrain}
-                                                            ></FontAwesomeIcon>{' '}
-                                                            {train.carriages}
-                                                        </div>
-                                                    </div>
-                                                    <div className='font-inter text-sm text-gray-600 justify-end pt-1.5'>
-                                                        <div className='inline-block'>
-                                                            {train.trainNumber}
-                                                        </div>
 
-                                                        <div className='inline-block ml-1.5 mr-1.5'>
-                                                            —
+                                                        <div className='flex justify-start items-center w-full'>
+                                                            <div className='font-inter text-sm text-gray-800'>
+                                                                {
+                                                                    train.destinationStationName
+                                                                }
+                                                            </div>
                                                         </div>
+                                                    </section>
 
-                                                        <div className='inline-block'>
-                                                            {train.serviceType}
+                                                    <section className='pt-1.5'>
+                                                        <div className='font-inter text-sm text-gray-600 text-right inline-block align-middle float-right'>
+                                                            <div>
+                                                                {
+                                                                    train.serviceType
+                                                                }
+                                                            </div>
+
+                                                            <div className='font-inter text-sm text-gray-600 pt-1.5 text-right'>
+                                                                <div className=''>
+                                                                    {
+                                                                        train.trainNumber
+                                                                    }
+                                                                </div>
+                                                            </div>
+
+                                                            <div className='font-inter text-sm text-gray-600 text-right pt-1'>
+                                                                <FontAwesomeIcon
+                                                                    icon={
+                                                                        faTrain
+                                                                    }
+                                                                ></FontAwesomeIcon>{' '}
+                                                                {
+                                                                    train.carriages
+                                                                }
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    </section>
                                                 </div>
                                             </div>
                                         </div>
