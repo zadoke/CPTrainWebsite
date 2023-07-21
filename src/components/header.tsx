@@ -11,7 +11,7 @@ interface HeaderProps {
 
 function Header({type, stationName, trainNumber}: HeaderProps) {
     return (
-        <nav className='backdrop-blur-sm bg-white/70 font-inter pt-3 pb-3 fixed right-0 left-0 mr-4 z-50'>
+        <nav className='backdrop-blur-sm bg-white/70 font-inter md:pt-3 md:pb-3 pt-0.3 pb-0.3 fixed right-0 left-0 mr-4 z-50'>
             <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
                 <div></div>
                 {type === 'station' && stationName && (
@@ -67,11 +67,11 @@ function Header({type, stationName, trainNumber}: HeaderProps) {
                     className='hidden w-full md:block md:w-auto'
                     id='navbar-default'
                 >
-                    <ul className='font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 bg-white'>
+                    <ul className='font-medium flex flex-col p-4 md:p-0 mt-4  rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0'>
                         <li>
                             <a
-                                href='#'
-                                className='block py-2 pl-3 pr-4 text-white rounded md:bg-white md:text-black md:p-0 dark:text-white text-black hover:text-gray-700'
+                                href='/'
+                                className='block py-2 pl-3 pr-4 text-white rounded md:text-black md:p-0 dark:text-white text-black hover:text-gray-700'
                                 aria-current='page'
                             >
                                 Horários
@@ -80,7 +80,7 @@ function Header({type, stationName, trainNumber}: HeaderProps) {
                         <li>
                             <a
                                 href='#'
-                                className='block py-2 pl-3 pr-4 text-white rounded md:bg-white md:text-black md:p-0 dark:text-white text-black hover:text-gray-700'
+                                className='block py-2 pl-3 pr-4 text-white rounded md:text-black md:p-0 dark:text-white text-black hover:text-gray-700'
                             >
                                 Comboio
                             </a>
@@ -88,7 +88,7 @@ function Header({type, stationName, trainNumber}: HeaderProps) {
                         <li>
                             <a
                                 href='#'
-                                className='block py-2 pl-3 pr-4 text-white rounded md:bg-white md:text-black md:p-0 dark:text-white text-black hover:text-gray-700'
+                                className='block py-2 pl-3 pr-4 text-white rounded md:text-black md:p-0 dark:text-white text-black hover:text-gray-700'
                             >
                                 Alerta
                             </a>
