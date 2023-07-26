@@ -94,7 +94,7 @@ const Schedule = () => {
                             <div className='font-inter font-bold text-center text-lg py-6'>
                                 {getSuppressedTrainCountText(scheduleData)}
                             </div>
-                            <div className='flex flex-col space-y-6 py-6 px-1 md:px-20'>
+                            <div className='flex flex-col space-y-6 py-6 px-1 md:px-20 max-w-screen-xl mx-auto'>
                                 {scheduleData.trains.map((train) => {
                                     const color = getStatusColor(train.info);
                                     const {
