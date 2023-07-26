@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSatelliteDish, faTrain } from '@fortawesome/free-solid-svg-icons';
 
@@ -91,10 +91,10 @@ const Schedule = () => {
                             stationName={scheduleData.stationName}
                         />
                         <div className='mt-16 mx-12'>
-                            <div className='font-inter font-bold text-center text-lg py-6'>
+                            <div className='font-inter font-bold text-center md:text-lg text-md py-6'>
                                 {getSuppressedTrainCountText(scheduleData)}
                             </div>
-                            <div className='flex flex-col space-y-6 py-6 px-1 md:px-20 max-w-screen-xl mx-auto'>
+                            <div className='flex flex-col space-y-5 md:py-5 md:px-20 md:max-w-screen-xl md:mx-auto mx-0'>
                                 {scheduleData.trains.map((train) => {
                                     const color = getStatusColor(train.info);
                                     const {
@@ -105,9 +105,9 @@ const Schedule = () => {
                                     return (
                                         <div
                                             key={train.trainNumber}
-                                            className='bg-gray-100 backdrop-blur-xl rounded-full shadow-md px-10 py-4 transition-all duration-500 hover:opacity-70'
+                                            className='bg-gray-100 backdrop-blur-xl rounded-full shadow-md md:px-10 px-8 md:py-4 py-3 transition-all duration-500 hover:opacity-70'
                                         >
-                                            <div className='flex flex-row items-center'>
+                                            <div className='flex flex-row items-center '>
                                                 <img
                                                     src={
                                                         train.operator.includes(
@@ -116,13 +116,13 @@ const Schedule = () => {
                                                             ? '/cp-logo.png'
                                                             : '/fertagus-logo.png'
                                                     }
-                                                    className='w-8 h-8 md:w-10 md:h-10 rounded-lg shadow-xl border-xl border-green-400 bg-opacity-30  dark:shadow-gray-400 mr-4'
+                                                    className='w-7 h-7 md:w-10 md:h-10 rounded-lg shadow-xl border-xl border-green-400 bg-opacity-30  dark:shadow-gray-400 md:mr-4 mr-3 '
                                                     alt='logo'
                                                 />
                                                 <div className='grid grid-cols-2 flex-1 md:mr-8'>
                                                     <section>
                                                         <div className='flex items-center'>
-                                                            <span className='relative flex h-3 w-3 mr-2'>
+                                                            <span className='relative flex h-3 w-3 md:mr-3 mr-2'>
                                                                 <span
                                                                     className={`animate-ping absolute inline-flex h-full w-full rounded-full ${pingClassName} opacity-75`}
                                                                 ></span>
@@ -131,36 +131,39 @@ const Schedule = () => {
                                                                 ></span>
                                                             </span>
                                                             <div
-                                                                className={`font-inter text-lg font-medium ${textClassName}`}
+                                                                className={`font-inter md:text-lg text-md font-medium ${textClassName}`}
                                                             >
                                                                 {train.time}{' '}
                                                             </div>
                                                         </div>
 
                                                         <div
-                                                            className={`font-inter text-lg font-medium ${textClassName}`}
+                                                            className={`font-inter md:text-lg text-xs  ${textClassName}`}
                                                         >
                                                             {train.info}
                                                         </div>
 
-                                                        <div className='flex justify-start items-center w-full'>
-                                                            <div className='font-inter text-sm text-gray-800'>
-                                                                {
-                                                                    train.destinationStationName
-                                                                }
+                                                        <div className='flex text-md justify-start items-center w-full'>
+                                                            <div className='font-inter text-gray-800 md:block hidden'>
+                                                                {train.originStationName} 
+                                                            </div>
+                                                            <div className='font-inter text-gray-800 md:mx-2 hidden md:block'>&rarr;</div>
+                                                            <div className='font-inter md:text-md text-md font-extrabold text-gray-800'>
+                                                                {train.destinationStationName}
                                                             </div>
                                                         </div>
+
                                                     </section>
 
-                                                    <section className='pt-1.5'>
-                                                        <div className='font-inter text-sm text-gray-600 text-right inline-block align-middle float-right'>
+                                                    <section className='md:pt-1.5 md:text-sm text-xs'>
+                                                        <div className='font-inter  text-gray-600 text-right inline-block align-middle float-right'>
                                                             <div>
                                                                 {
                                                                     train.serviceType
                                                                 }
                                                             </div>
 
-                                                            <div className='font-inter text-sm text-gray-600 pt-1.5 text-right'>
+                                                            <div className='font-inter text-gray-600 pt-1.5 text-right'>
                                                                 <div className=''>
                                                                     <FontAwesomeIcon
                                                                         className='px-1'
@@ -174,7 +177,7 @@ const Schedule = () => {
                                                                 </div>
                                                             </div>
 
-                                                            <div className='font-inter text-sm text-gray-600 text-right pt-1'>
+                                                            <div className='font-inter text-gray-600 text-right pt-1'>
                                                                 <FontAwesomeIcon
                                                                     icon={
                                                                         faTrain
