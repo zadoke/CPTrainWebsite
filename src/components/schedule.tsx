@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faTrain } from '@fortawesome/free-solid-svg-icons';
+import { faSatelliteDish, faTrain } from '@fortawesome/free-solid-svg-icons';
 
 import Header from './header';
 import Footer from './footer';
@@ -105,7 +105,7 @@ const Schedule = () => {
                                     return (
                                         <div
                                             key={train.trainNumber}
-                                            className='bg-gray-100 backdrop-blur-xl rounded-full shadow-md px-8 py-4 transition-all duration-500 hover:opacity-70'
+                                            className='bg-gray-100 backdrop-blur-xl rounded-full shadow-md px-10 py-4 transition-all duration-500 hover:opacity-70'
                                         >
                                             <div className='flex flex-row items-center'>
                                                 <img
@@ -162,6 +162,12 @@ const Schedule = () => {
 
                                                             <div className='font-inter text-sm text-gray-600 pt-1.5 text-right'>
                                                                 <div className=''>
+                                                                    <FontAwesomeIcon
+                                                                        className='px-1'
+                                                                        icon={
+                                                                            faSatelliteDish
+                                                                        }
+                                                                    ></FontAwesomeIcon>
                                                                     {
                                                                         train.trainNumber
                                                                     }
